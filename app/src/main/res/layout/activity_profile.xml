@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    android:background="@color/bg_grey">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="97dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="83dp" />
+
+    <ImageView
+        android:id="@+id/img_top_color"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal"
+        android:background="@drawable/bg_profile"
+        />
+
+    <ImageView
+        android:id="@+id/img_profile_bg"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:background="@drawable/bg_pfp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical"
+        app:layout_constraintTop_toTopOf="@id/guideline_horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_img_profile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:cardCornerRadius="55dp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical"
+        app:layout_constraintTop_toTopOf="@id/guideline_horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/img_profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/pfp3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/view_profile_margin"
+        android:layout_marginTop="14dp"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student"
+            android:textSize="18sp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="3dp"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_contet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/guideline_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="70dp"
+        android:background="@color/white"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        android:layout_marginHorizontal="@dimen/view_profile_margin"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            >
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Angelina Jolie"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                style="@style/CustomTextTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+            <TextView
+                android:id="@+id/txt_nim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22/410934/FT/20292"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_name"
+                />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/bg_grey"
+                app:layout_constraintTop_toBottomOf="@id/txt_nim"
+                android:layout_marginVertical="10dp"
+                />
+
+            <TextView
+                android:id="@+id/txt_ipk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GPA"
+                style="@style/CustomTextTitle2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins_bold"
+                />
+            <TextView
+                android:id="@+id/txt_ipk_nilai"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="4.0"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/txt_ipk"
+                app:layout_constraintBottom_toBottomOf="@id/txt_ipk"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center|end"
+                />
+
+            <TextView
+                android:id="@+id/txt_kota_asal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kota Asal"
+                style="@style/CustomTextTitle2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_ipk"
+                android:fontFamily="@font/poppins_bold"
+                />
+            <TextView
+                android:id="@+id/txt_kota"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Yogyakarta"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/txt_kota_asal"
+                app:layout_constraintBottom_toBottomOf="@id/txt_kota_asal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txt_kota_asal"
+                android:layout_marginStart="30dp"
+                android:gravity="center|end"
+                android:maxLines="1"
+                android:ellipsize="end"
+                />
+
+            <TextView
+                android:id="@+id/txt_matkul_favorit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mata Kuliah Favorit :"
+                style="@style/CustomTextTitle2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_kota_asal"
+                android:fontFamily="@font/poppins_bold"
+                />
+            <TextView
+                android:id="@+id/txt_matkul"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Praktikum Pemrograman Perangkat Lunak"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/txt_matkul_favorit"
+                app:layout_constraintStart_toStartOf="@id/txt_matkul_favorit"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="50dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="@dimen/card_corner_radius"
+        android:text="Back"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/black"
+        android:textFontWeight="700"
+        android:backgroundTint="@color/white"
+        app:strokeColor="@color/green"
+        app:strokeWidth="3dp"
+        android:paddingVertical="10dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="@dimen/view_profile_margin"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
